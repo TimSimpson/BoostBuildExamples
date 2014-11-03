@@ -1,0 +1,12 @@
+import boost ;
+
+boost.use-project 1.56 ;
+
+project HelloWorldProj
+    :   requirements
+        <library>/boost//headers
+    ;
+
+exe main
+    :   main.cpp
+    ;

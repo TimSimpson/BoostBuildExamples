@@ -1,0 +1,17 @@
+import boost ;
+
+boost.use-project 1.56 ;
+
+project HelloProgramOptions
+    :   requirements
+        <library>/boost//headers
+        <library>/boost//program_options
+    ;
+
+exe wf
+    :   main.cpp
+    ;
+
+install exe
+    :   wf
+    ;

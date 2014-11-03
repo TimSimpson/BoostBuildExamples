@@ -1,0 +1,7 @@
+import os ;
+
+local GREETINGS = [ os.environ GREETINGS ] ;
+
+if $(GREETINGS) != "" {
+    echo $(GREETINGS) ;
+}

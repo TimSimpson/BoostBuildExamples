@@ -1,0 +1,16 @@
+import boost ;
+
+boost.use-project 1.56 ;
+
+project HelloFileSystem
+    :   requirements
+        <library>/boost//filesystem
+    ;
+
+exe ls
+    :   main.cpp
+    ;
+
+install exe
+    :   ls
+    ;

@@ -1,0 +1,21 @@
+local rule taco ( name : ingredients * : calories ) {
+    echo " " $(name) ;
+    echo "    Ingredients:" $(ingredients) ;
+    echo "    Calories   :" $(calories) ;
+    echo ;
+}
+
+taco bowl
+    :   meat
+        tomatoes
+        salsa
+    : 458
+    ;
+
+taco crunchy
+    :   oatmeal
+        corn
+        cheese
+        lettuce
+    :   357
+    ;

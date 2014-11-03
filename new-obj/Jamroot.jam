@@ -1,0 +1,24 @@
+import boost ;
+
+boost.use-project 1.56 ;
+
+project NewObjGame
+    ;
+
+obj game_obj
+    :   game.cpp
+    ;
+
+#obj main_obj
+#    :   main.cpp
+#    ;
+
+exe game
+    :   main.cpp
+        #main_obj
+        game_obj
+    ;
+
+install exe
+    :   game
+    ;
