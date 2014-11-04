@@ -1,3 +1,4 @@
+#include "precompiled_headers.hpp"
 #include "calc.hpp"
 #include <boost/lexical_cast.hpp>
 #include <iostream>
@@ -24,7 +25,6 @@ op get_operator() {
     } else if ('+' == c) {
         return op::plus;
     }
-    // throw exception("Bad operator!");  -- Worked in MSVC
     throw exception();
 }
 

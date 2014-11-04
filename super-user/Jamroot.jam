@@ -1,0 +1,26 @@
+import boost ;
+
+boost.use-project 1.56 ;
+
+use-project /SuperLibProj
+    :   "../super-lib"
+    ;
+
+project SuperUser
+    :   requirements
+        # <library>/SuperLibProj//calc_lib   # <-- No point, as its duplicated:
+
+    :   usage-requirements
+        <library>/SuperLibProj//calc_lib
+    ;
+
+exe calc2
+    :   calc2.cpp
+    :   <library>/SuperLibProj//calc_lib
+    ;
+
+install exe
+    :   calc2
+    :   <install-dependencies>on <install-type>EXE
+        <install-type>LIB
+    ;

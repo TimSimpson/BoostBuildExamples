@@ -1,0 +1,34 @@
+import boost ;
+using testing ;
+
+boost.use-project 1.56 ;
+
+project CalculatorAsLib
+    :   requirements
+        <library>/boost//headers
+    ;
+
+obj calc_obj
+    :   calc.cpp
+    ;
+
+unit-test calc_test
+    :   test.cpp
+        calc_obj
+    ;
+
+lib calc_lib
+    :   calc_obj
+        calc_test
+    ;
+
+exe calc
+    :   main.cpp
+        calc_lib
+    ;
+
+install exe
+    :   calc
+    :   <install-dependencies>on <install-type>EXE
+        <install-type>LIB
+    ;

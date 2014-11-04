@@ -1,0 +1,32 @@
+import boost ;
+using testing ;
+
+boost.use-project 1.56 ;
+
+project Calculator
+    :   requirements
+        <library>/boost//headers
+    ;
+
+obj calc_obj
+    :   calc.cpp
+    ;
+
+unit-test calc_test
+    :   test.cpp
+        calc_obj
+        /boost//headers
+        /boost//unit_test_framework
+        /boost//test_exec_monitor
+    :   <define>BOOST_TEST_DYN_LINK
+    ;
+
+exe calc
+    :   main.cpp
+        calc_obj
+        calc_test
+    ;
+
+install exe
+    :   calc
+    ;

@@ -24,7 +24,6 @@ op get_operator() {
     } else if ('+' == c) {
         return op::plus;
     }
-    // throw exception("Bad operator!");  -- Worked in MSVC
     throw exception();
 }
 

@@ -1,0 +1,37 @@
+import boost ;
+using testing ;
+
+boost.use-project 1.56 ;
+
+project CalculatorAsRealLib
+    :   requirements
+        <library>/boost//headers
+#    :   usage-requirements
+#        <link>shared:<define>CALCLIB_DYN_LINK=1
+    ;
+
+obj calc_obj
+    :   calc.cpp
+    :   <link>shared:<define>CALCLIB_DYN_LINK=1
+    ;
+
+unit-test calc_test
+    :   test.cpp
+        calc_obj
+    ;
+
+lib calc_lib
+    :   calc_obj
+        calc_test
+    ;
+
+exe calc
+    :   main.cpp
+        calc_lib
+    ;
+
+install exe
+    :   calc
+    :   <install-dependencies>on <install-type>EXE
+        <install-type>LIB
+    ;
