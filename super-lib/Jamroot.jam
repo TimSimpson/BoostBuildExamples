@@ -3,7 +3,7 @@ using testing ;
 
 import pch ;
 
-boost.use-project 1.56 ;
+boost.use-project 1.57 ;
 
 project CalculatorAsRealLib
     :   requirements
