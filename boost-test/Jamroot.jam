@@ -1,7 +1,7 @@
 import boost ;
 using testing ;
 
-boost.use-project 1.57 ;
+boost.use-project ;
 
 project Calculator
     :   requirements
